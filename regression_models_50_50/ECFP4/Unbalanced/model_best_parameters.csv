@@ -1,0 +1,401 @@
+,model,trial,Target ID,n_neighbors,metric,C,kernel,n_estimators,max_features,min_samples_split,min_samples_leaf,strategy
+0,1-NN,0,CHEMBL333,1.0,jaccard,,,,,,,
+1,kNN,0,CHEMBL333,3.0,jaccard,,,,,,,
+2,SVR,0,CHEMBL333,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+3,RFR,0,CHEMBL333,,,,,200.0,sqrt,2.0,1.0,
+4,MR,0,CHEMBL333,,,,,,,,,median
+5,1-NN,1,CHEMBL333,1.0,jaccard,,,,,,,
+6,kNN,1,CHEMBL333,3.0,jaccard,,,,,,,
+7,SVR,1,CHEMBL333,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+8,RFR,1,CHEMBL333,,,,,100.0,sqrt,2.0,1.0,
+9,MR,1,CHEMBL333,,,,,,,,,median
+10,1-NN,2,CHEMBL333,1.0,jaccard,,,,,,,
+11,kNN,2,CHEMBL333,3.0,jaccard,,,,,,,
+12,SVR,2,CHEMBL333,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+13,RFR,2,CHEMBL333,,,,,50.0,sqrt,2.0,1.0,
+14,MR,2,CHEMBL333,,,,,,,,,median
+15,1-NN,3,CHEMBL333,1.0,jaccard,,,,,,,
+16,kNN,3,CHEMBL333,3.0,jaccard,,,,,,,
+17,SVR,3,CHEMBL333,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+18,RFR,3,CHEMBL333,,,,,200.0,sqrt,2.0,1.0,
+19,MR,3,CHEMBL333,,,,,,,,,median
+20,1-NN,4,CHEMBL333,1.0,jaccard,,,,,,,
+21,kNN,4,CHEMBL333,3.0,jaccard,,,,,,,
+22,SVR,4,CHEMBL333,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+23,RFR,4,CHEMBL333,,,,,200.0,sqrt,2.0,1.0,
+24,MR,4,CHEMBL333,,,,,,,,,median
+25,1-NN,5,CHEMBL333,1.0,jaccard,,,,,,,
+26,kNN,5,CHEMBL333,3.0,jaccard,,,,,,,
+27,SVR,5,CHEMBL333,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+28,RFR,5,CHEMBL333,,,,,100.0,sqrt,2.0,1.0,
+29,MR,5,CHEMBL333,,,,,,,,,median
+30,1-NN,6,CHEMBL333,1.0,jaccard,,,,,,,
+31,kNN,6,CHEMBL333,3.0,jaccard,,,,,,,
+32,SVR,6,CHEMBL333,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+33,RFR,6,CHEMBL333,,,,,200.0,sqrt,2.0,1.0,
+34,MR,6,CHEMBL333,,,,,,,,,median
+35,1-NN,7,CHEMBL333,1.0,jaccard,,,,,,,
+36,kNN,7,CHEMBL333,3.0,jaccard,,,,,,,
+37,SVR,7,CHEMBL333,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+38,RFR,7,CHEMBL333,,,,,200.0,sqrt,2.0,1.0,
+39,MR,7,CHEMBL333,,,,,,,,,median
+40,1-NN,8,CHEMBL333,1.0,jaccard,,,,,,,
+41,kNN,8,CHEMBL333,3.0,jaccard,,,,,,,
+42,SVR,8,CHEMBL333,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+43,RFR,8,CHEMBL333,,,,,100.0,sqrt,2.0,1.0,
+44,MR,8,CHEMBL333,,,,,,,,,median
+45,1-NN,9,CHEMBL333,1.0,jaccard,,,,,,,
+46,kNN,9,CHEMBL333,3.0,jaccard,,,,,,,
+47,SVR,9,CHEMBL333,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+48,RFR,9,CHEMBL333,,,,,200.0,sqrt,2.0,1.0,
+49,MR,9,CHEMBL333,,,,,,,,,median
+50,1-NN,0,CHEMBL268,1.0,jaccard,,,,,,,
+51,kNN,0,CHEMBL268,3.0,jaccard,,,,,,,
+52,SVR,0,CHEMBL268,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+53,RFR,0,CHEMBL268,,,,,200.0,sqrt,2.0,1.0,
+54,MR,0,CHEMBL268,,,,,,,,,median
+55,1-NN,1,CHEMBL268,1.0,jaccard,,,,,,,
+56,kNN,1,CHEMBL268,3.0,jaccard,,,,,,,
+57,SVR,1,CHEMBL268,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+58,RFR,1,CHEMBL268,,,,,200.0,sqrt,2.0,1.0,
+59,MR,1,CHEMBL268,,,,,,,,,median
+60,1-NN,2,CHEMBL268,1.0,jaccard,,,,,,,
+61,kNN,2,CHEMBL268,3.0,jaccard,,,,,,,
+62,SVR,2,CHEMBL268,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+63,RFR,2,CHEMBL268,,,,,50.0,sqrt,2.0,1.0,
+64,MR,2,CHEMBL268,,,,,,,,,median
+65,1-NN,3,CHEMBL268,1.0,jaccard,,,,,,,
+66,kNN,3,CHEMBL268,3.0,jaccard,,,,,,,
+67,SVR,3,CHEMBL268,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+68,RFR,3,CHEMBL268,,,,,100.0,sqrt,2.0,1.0,
+69,MR,3,CHEMBL268,,,,,,,,,median
+70,1-NN,4,CHEMBL268,1.0,jaccard,,,,,,,
+71,kNN,4,CHEMBL268,3.0,jaccard,,,,,,,
+72,SVR,4,CHEMBL268,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+73,RFR,4,CHEMBL268,,,,,50.0,sqrt,2.0,1.0,
+74,MR,4,CHEMBL268,,,,,,,,,median
+75,1-NN,5,CHEMBL268,1.0,jaccard,,,,,,,
+76,kNN,5,CHEMBL268,3.0,jaccard,,,,,,,
+77,SVR,5,CHEMBL268,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+78,RFR,5,CHEMBL268,,,,,100.0,sqrt,2.0,1.0,
+79,MR,5,CHEMBL268,,,,,,,,,median
+80,1-NN,6,CHEMBL268,1.0,jaccard,,,,,,,
+81,kNN,6,CHEMBL268,3.0,jaccard,,,,,,,
+82,SVR,6,CHEMBL268,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+83,RFR,6,CHEMBL268,,,,,50.0,sqrt,2.0,1.0,
+84,MR,6,CHEMBL268,,,,,,,,,median
+85,1-NN,7,CHEMBL268,1.0,jaccard,,,,,,,
+86,kNN,7,CHEMBL268,3.0,jaccard,,,,,,,
+87,SVR,7,CHEMBL268,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+88,RFR,7,CHEMBL268,,,,,100.0,sqrt,2.0,1.0,
+89,MR,7,CHEMBL268,,,,,,,,,median
+90,1-NN,8,CHEMBL268,1.0,jaccard,,,,,,,
+91,kNN,8,CHEMBL268,3.0,jaccard,,,,,,,
+92,SVR,8,CHEMBL268,,,10000.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+93,RFR,8,CHEMBL268,,,,,200.0,sqrt,2.0,1.0,
+94,MR,8,CHEMBL268,,,,,,,,,median
+95,1-NN,9,CHEMBL268,1.0,jaccard,,,,,,,
+96,kNN,9,CHEMBL268,3.0,jaccard,,,,,,,
+97,SVR,9,CHEMBL268,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+98,RFR,9,CHEMBL268,,,,,50.0,sqrt,2.0,1.0,
+99,MR,9,CHEMBL268,,,,,,,,,median
+100,1-NN,0,CHEMBL280,1.0,jaccard,,,,,,,
+101,kNN,0,CHEMBL280,3.0,jaccard,,,,,,,
+102,SVR,0,CHEMBL280,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+103,RFR,0,CHEMBL280,,,,,200.0,sqrt,2.0,1.0,
+104,MR,0,CHEMBL280,,,,,,,,,median
+105,1-NN,1,CHEMBL280,1.0,jaccard,,,,,,,
+106,kNN,1,CHEMBL280,3.0,jaccard,,,,,,,
+107,SVR,1,CHEMBL280,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+108,RFR,1,CHEMBL280,,,,,50.0,sqrt,2.0,1.0,
+109,MR,1,CHEMBL280,,,,,,,,,median
+110,1-NN,2,CHEMBL280,1.0,jaccard,,,,,,,
+111,kNN,2,CHEMBL280,3.0,jaccard,,,,,,,
+112,SVR,2,CHEMBL280,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+113,RFR,2,CHEMBL280,,,,,50.0,sqrt,2.0,1.0,
+114,MR,2,CHEMBL280,,,,,,,,,median
+115,1-NN,3,CHEMBL280,1.0,jaccard,,,,,,,
+116,kNN,3,CHEMBL280,3.0,jaccard,,,,,,,
+117,SVR,3,CHEMBL280,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+118,RFR,3,CHEMBL280,,,,,200.0,sqrt,2.0,1.0,
+119,MR,3,CHEMBL280,,,,,,,,,median
+120,1-NN,4,CHEMBL280,1.0,jaccard,,,,,,,
+121,kNN,4,CHEMBL280,3.0,jaccard,,,,,,,
+122,SVR,4,CHEMBL280,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+123,RFR,4,CHEMBL280,,,,,50.0,sqrt,2.0,1.0,
+124,MR,4,CHEMBL280,,,,,,,,,median
+125,1-NN,5,CHEMBL280,1.0,jaccard,,,,,,,
+126,kNN,5,CHEMBL280,3.0,jaccard,,,,,,,
+127,SVR,5,CHEMBL280,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+128,RFR,5,CHEMBL280,,,,,200.0,sqrt,3.0,1.0,
+129,MR,5,CHEMBL280,,,,,,,,,median
+130,1-NN,6,CHEMBL280,1.0,jaccard,,,,,,,
+131,kNN,6,CHEMBL280,3.0,jaccard,,,,,,,
+132,SVR,6,CHEMBL280,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+133,RFR,6,CHEMBL280,,,,,200.0,sqrt,3.0,1.0,
+134,MR,6,CHEMBL280,,,,,,,,,median
+135,1-NN,7,CHEMBL280,1.0,jaccard,,,,,,,
+136,kNN,7,CHEMBL280,3.0,jaccard,,,,,,,
+137,SVR,7,CHEMBL280,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+138,RFR,7,CHEMBL280,,,,,200.0,sqrt,2.0,1.0,
+139,MR,7,CHEMBL280,,,,,,,,,median
+140,1-NN,8,CHEMBL280,1.0,jaccard,,,,,,,
+141,kNN,8,CHEMBL280,3.0,jaccard,,,,,,,
+142,SVR,8,CHEMBL280,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+143,RFR,8,CHEMBL280,,,,,200.0,sqrt,2.0,1.0,
+144,MR,8,CHEMBL280,,,,,,,,,median
+145,1-NN,9,CHEMBL280,1.0,jaccard,,,,,,,
+146,kNN,9,CHEMBL280,3.0,jaccard,,,,,,,
+147,SVR,9,CHEMBL280,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+148,RFR,9,CHEMBL280,,,,,200.0,sqrt,2.0,1.0,
+149,MR,9,CHEMBL280,,,,,,,,,median
+150,1-NN,0,CHEMBL203,1.0,jaccard,,,,,,,
+151,kNN,0,CHEMBL203,3.0,jaccard,,,,,,,
+152,SVR,0,CHEMBL203,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+153,RFR,0,CHEMBL203,,,,,100.0,sqrt,2.0,1.0,
+154,MR,0,CHEMBL203,,,,,,,,,median
+155,1-NN,1,CHEMBL203,1.0,jaccard,,,,,,,
+156,kNN,1,CHEMBL203,3.0,jaccard,,,,,,,
+157,SVR,1,CHEMBL203,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+158,RFR,1,CHEMBL203,,,,,200.0,sqrt,2.0,1.0,
+159,MR,1,CHEMBL203,,,,,,,,,median
+160,1-NN,2,CHEMBL203,1.0,jaccard,,,,,,,
+161,kNN,2,CHEMBL203,3.0,jaccard,,,,,,,
+162,SVR,2,CHEMBL203,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+163,RFR,2,CHEMBL203,,,,,200.0,sqrt,2.0,1.0,
+164,MR,2,CHEMBL203,,,,,,,,,median
+165,1-NN,3,CHEMBL203,1.0,jaccard,,,,,,,
+166,kNN,3,CHEMBL203,3.0,jaccard,,,,,,,
+167,SVR,3,CHEMBL203,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+168,RFR,3,CHEMBL203,,,,,100.0,sqrt,2.0,1.0,
+169,MR,3,CHEMBL203,,,,,,,,,median
+170,1-NN,4,CHEMBL203,1.0,jaccard,,,,,,,
+171,kNN,4,CHEMBL203,3.0,jaccard,,,,,,,
+172,SVR,4,CHEMBL203,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+173,RFR,4,CHEMBL203,,,,,200.0,sqrt,2.0,1.0,
+174,MR,4,CHEMBL203,,,,,,,,,median
+175,1-NN,5,CHEMBL203,1.0,jaccard,,,,,,,
+176,kNN,5,CHEMBL203,3.0,jaccard,,,,,,,
+177,SVR,5,CHEMBL203,,,10000.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+178,RFR,5,CHEMBL203,,,,,200.0,sqrt,2.0,1.0,
+179,MR,5,CHEMBL203,,,,,,,,,median
+180,1-NN,6,CHEMBL203,1.0,jaccard,,,,,,,
+181,kNN,6,CHEMBL203,3.0,jaccard,,,,,,,
+182,SVR,6,CHEMBL203,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+183,RFR,6,CHEMBL203,,,,,200.0,sqrt,3.0,1.0,
+184,MR,6,CHEMBL203,,,,,,,,,median
+185,1-NN,7,CHEMBL203,1.0,jaccard,,,,,,,
+186,kNN,7,CHEMBL203,3.0,jaccard,,,,,,,
+187,SVR,7,CHEMBL203,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+188,RFR,7,CHEMBL203,,,,,200.0,sqrt,2.0,1.0,
+189,MR,7,CHEMBL203,,,,,,,,,median
+190,1-NN,8,CHEMBL203,1.0,jaccard,,,,,,,
+191,kNN,8,CHEMBL203,3.0,jaccard,,,,,,,
+192,SVR,8,CHEMBL203,,,10000.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+193,RFR,8,CHEMBL203,,,,,200.0,sqrt,2.0,1.0,
+194,MR,8,CHEMBL203,,,,,,,,,median
+195,1-NN,9,CHEMBL203,1.0,jaccard,,,,,,,
+196,kNN,9,CHEMBL203,3.0,jaccard,,,,,,,
+197,SVR,9,CHEMBL203,,,10000.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+198,RFR,9,CHEMBL203,,,,,100.0,sqrt,2.0,1.0,
+199,MR,9,CHEMBL203,,,,,,,,,median
+200,1-NN,0,CHEMBL279,1.0,jaccard,,,,,,,
+201,kNN,0,CHEMBL279,3.0,jaccard,,,,,,,
+202,SVR,0,CHEMBL279,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+203,RFR,0,CHEMBL279,,,,,100.0,sqrt,2.0,1.0,
+204,MR,0,CHEMBL279,,,,,,,,,median
+205,1-NN,1,CHEMBL279,1.0,jaccard,,,,,,,
+206,kNN,1,CHEMBL279,3.0,jaccard,,,,,,,
+207,SVR,1,CHEMBL279,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+208,RFR,1,CHEMBL279,,,,,200.0,sqrt,2.0,1.0,
+209,MR,1,CHEMBL279,,,,,,,,,median
+210,1-NN,2,CHEMBL279,1.0,jaccard,,,,,,,
+211,kNN,2,CHEMBL279,3.0,jaccard,,,,,,,
+212,SVR,2,CHEMBL279,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+213,RFR,2,CHEMBL279,,,,,200.0,sqrt,2.0,1.0,
+214,MR,2,CHEMBL279,,,,,,,,,median
+215,1-NN,3,CHEMBL279,1.0,jaccard,,,,,,,
+216,kNN,3,CHEMBL279,3.0,jaccard,,,,,,,
+217,SVR,3,CHEMBL279,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+218,RFR,3,CHEMBL279,,,,,100.0,sqrt,2.0,1.0,
+219,MR,3,CHEMBL279,,,,,,,,,median
+220,1-NN,4,CHEMBL279,1.0,jaccard,,,,,,,
+221,kNN,4,CHEMBL279,3.0,jaccard,,,,,,,
+222,SVR,4,CHEMBL279,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+223,RFR,4,CHEMBL279,,,,,200.0,sqrt,2.0,1.0,
+224,MR,4,CHEMBL279,,,,,,,,,median
+225,1-NN,5,CHEMBL279,1.0,jaccard,,,,,,,
+226,kNN,5,CHEMBL279,3.0,jaccard,,,,,,,
+227,SVR,5,CHEMBL279,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+228,RFR,5,CHEMBL279,,,,,200.0,sqrt,2.0,1.0,
+229,MR,5,CHEMBL279,,,,,,,,,median
+230,1-NN,6,CHEMBL279,1.0,jaccard,,,,,,,
+231,kNN,6,CHEMBL279,3.0,jaccard,,,,,,,
+232,SVR,6,CHEMBL279,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+233,RFR,6,CHEMBL279,,,,,200.0,sqrt,2.0,1.0,
+234,MR,6,CHEMBL279,,,,,,,,,median
+235,1-NN,7,CHEMBL279,1.0,jaccard,,,,,,,
+236,kNN,7,CHEMBL279,3.0,jaccard,,,,,,,
+237,SVR,7,CHEMBL279,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+238,RFR,7,CHEMBL279,,,,,100.0,sqrt,2.0,1.0,
+239,MR,7,CHEMBL279,,,,,,,,,median
+240,1-NN,8,CHEMBL279,1.0,jaccard,,,,,,,
+241,kNN,8,CHEMBL279,3.0,jaccard,,,,,,,
+242,SVR,8,CHEMBL279,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+243,RFR,8,CHEMBL279,,,,,200.0,sqrt,2.0,1.0,
+244,MR,8,CHEMBL279,,,,,,,,,median
+245,1-NN,9,CHEMBL279,1.0,jaccard,,,,,,,
+246,kNN,9,CHEMBL279,3.0,jaccard,,,,,,,
+247,SVR,9,CHEMBL279,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+248,RFR,9,CHEMBL279,,,,,200.0,sqrt,2.0,1.0,
+249,MR,9,CHEMBL279,,,,,,,,,median
+250,1-NN,0,CHEMBL2409,1.0,jaccard,,,,,,,
+251,kNN,0,CHEMBL2409,3.0,jaccard,,,,,,,
+252,SVR,0,CHEMBL2409,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+253,RFR,0,CHEMBL2409,,,,,200.0,sqrt,2.0,1.0,
+254,MR,0,CHEMBL2409,,,,,,,,,median
+255,1-NN,1,CHEMBL2409,1.0,jaccard,,,,,,,
+256,kNN,1,CHEMBL2409,3.0,jaccard,,,,,,,
+257,SVR,1,CHEMBL2409,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+258,RFR,1,CHEMBL2409,,,,,200.0,sqrt,2.0,1.0,
+259,MR,1,CHEMBL2409,,,,,,,,,median
+260,1-NN,2,CHEMBL2409,1.0,jaccard,,,,,,,
+261,kNN,2,CHEMBL2409,3.0,jaccard,,,,,,,
+262,SVR,2,CHEMBL2409,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+263,RFR,2,CHEMBL2409,,,,,100.0,sqrt,2.0,1.0,
+264,MR,2,CHEMBL2409,,,,,,,,,median
+265,1-NN,3,CHEMBL2409,1.0,jaccard,,,,,,,
+266,kNN,3,CHEMBL2409,3.0,jaccard,,,,,,,
+267,SVR,3,CHEMBL2409,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+268,RFR,3,CHEMBL2409,,,,,50.0,sqrt,2.0,1.0,
+269,MR,3,CHEMBL2409,,,,,,,,,median
+270,1-NN,4,CHEMBL2409,1.0,jaccard,,,,,,,
+271,kNN,4,CHEMBL2409,3.0,jaccard,,,,,,,
+272,SVR,4,CHEMBL2409,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+273,RFR,4,CHEMBL2409,,,,,100.0,sqrt,2.0,1.0,
+274,MR,4,CHEMBL2409,,,,,,,,,median
+275,1-NN,5,CHEMBL2409,1.0,jaccard,,,,,,,
+276,kNN,5,CHEMBL2409,3.0,jaccard,,,,,,,
+277,SVR,5,CHEMBL2409,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+278,RFR,5,CHEMBL2409,,,,,100.0,sqrt,2.0,1.0,
+279,MR,5,CHEMBL2409,,,,,,,,,median
+280,1-NN,6,CHEMBL2409,1.0,jaccard,,,,,,,
+281,kNN,6,CHEMBL2409,3.0,jaccard,,,,,,,
+282,SVR,6,CHEMBL2409,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+283,RFR,6,CHEMBL2409,,,,,200.0,sqrt,2.0,1.0,
+284,MR,6,CHEMBL2409,,,,,,,,,median
+285,1-NN,7,CHEMBL2409,1.0,jaccard,,,,,,,
+286,kNN,7,CHEMBL2409,3.0,jaccard,,,,,,,
+287,SVR,7,CHEMBL2409,,,10000.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+288,RFR,7,CHEMBL2409,,,,,100.0,sqrt,2.0,1.0,
+289,MR,7,CHEMBL2409,,,,,,,,,median
+290,1-NN,8,CHEMBL2409,1.0,jaccard,,,,,,,
+291,kNN,8,CHEMBL2409,3.0,jaccard,,,,,,,
+292,SVR,8,CHEMBL2409,,,10000.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+293,RFR,8,CHEMBL2409,,,,,200.0,sqrt,2.0,1.0,
+294,MR,8,CHEMBL2409,,,,,,,,,median
+295,1-NN,9,CHEMBL2409,1.0,jaccard,,,,,,,
+296,kNN,9,CHEMBL2409,3.0,jaccard,,,,,,,
+297,SVR,9,CHEMBL2409,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+298,RFR,9,CHEMBL2409,,,,,100.0,sqrt,2.0,1.0,
+299,MR,9,CHEMBL2409,,,,,,,,,median
+300,1-NN,0,CHEMBL260,1.0,jaccard,,,,,,,
+301,kNN,0,CHEMBL260,3.0,jaccard,,,,,,,
+302,SVR,0,CHEMBL260,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+303,RFR,0,CHEMBL260,,,,,100.0,sqrt,2.0,1.0,
+304,MR,0,CHEMBL260,,,,,,,,,median
+305,1-NN,1,CHEMBL260,1.0,jaccard,,,,,,,
+306,kNN,1,CHEMBL260,3.0,jaccard,,,,,,,
+307,SVR,1,CHEMBL260,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+308,RFR,1,CHEMBL260,,,,,200.0,sqrt,2.0,1.0,
+309,MR,1,CHEMBL260,,,,,,,,,median
+310,1-NN,2,CHEMBL260,1.0,jaccard,,,,,,,
+311,kNN,2,CHEMBL260,3.0,jaccard,,,,,,,
+312,SVR,2,CHEMBL260,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+313,RFR,2,CHEMBL260,,,,,100.0,sqrt,2.0,1.0,
+314,MR,2,CHEMBL260,,,,,,,,,median
+315,1-NN,3,CHEMBL260,1.0,jaccard,,,,,,,
+316,kNN,3,CHEMBL260,3.0,jaccard,,,,,,,
+317,SVR,3,CHEMBL260,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+318,RFR,3,CHEMBL260,,,,,200.0,sqrt,2.0,1.0,
+319,MR,3,CHEMBL260,,,,,,,,,median
+320,1-NN,4,CHEMBL260,1.0,jaccard,,,,,,,
+321,kNN,4,CHEMBL260,3.0,jaccard,,,,,,,
+322,SVR,4,CHEMBL260,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+323,RFR,4,CHEMBL260,,,,,200.0,sqrt,2.0,1.0,
+324,MR,4,CHEMBL260,,,,,,,,,median
+325,1-NN,5,CHEMBL260,1.0,jaccard,,,,,,,
+326,kNN,5,CHEMBL260,3.0,jaccard,,,,,,,
+327,SVR,5,CHEMBL260,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+328,RFR,5,CHEMBL260,,,,,100.0,sqrt,2.0,1.0,
+329,MR,5,CHEMBL260,,,,,,,,,median
+330,1-NN,6,CHEMBL260,1.0,jaccard,,,,,,,
+331,kNN,6,CHEMBL260,3.0,jaccard,,,,,,,
+332,SVR,6,CHEMBL260,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+333,RFR,6,CHEMBL260,,,,,200.0,sqrt,2.0,1.0,
+334,MR,6,CHEMBL260,,,,,,,,,median
+335,1-NN,7,CHEMBL260,1.0,jaccard,,,,,,,
+336,kNN,7,CHEMBL260,3.0,jaccard,,,,,,,
+337,SVR,7,CHEMBL260,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+338,RFR,7,CHEMBL260,,,,,100.0,sqrt,2.0,1.0,
+339,MR,7,CHEMBL260,,,,,,,,,median
+340,1-NN,8,CHEMBL260,1.0,jaccard,,,,,,,
+341,kNN,8,CHEMBL260,3.0,jaccard,,,,,,,
+342,SVR,8,CHEMBL260,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+343,RFR,8,CHEMBL260,,,,,200.0,sqrt,2.0,1.0,
+344,MR,8,CHEMBL260,,,,,,,,,median
+345,1-NN,9,CHEMBL260,1.0,jaccard,,,,,,,
+346,kNN,9,CHEMBL260,3.0,jaccard,,,,,,,
+347,SVR,9,CHEMBL260,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+348,RFR,9,CHEMBL260,,,,,200.0,sqrt,2.0,1.0,
+349,MR,9,CHEMBL260,,,,,,,,,median
+350,1-NN,0,CHEMBL286,1.0,jaccard,,,,,,,
+351,kNN,0,CHEMBL286,3.0,jaccard,,,,,,,
+352,SVR,0,CHEMBL286,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+353,RFR,0,CHEMBL286,,,,,50.0,sqrt,2.0,1.0,
+354,MR,0,CHEMBL286,,,,,,,,,median
+355,1-NN,1,CHEMBL286,1.0,jaccard,,,,,,,
+356,kNN,1,CHEMBL286,3.0,jaccard,,,,,,,
+357,SVR,1,CHEMBL286,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+358,RFR,1,CHEMBL286,,,,,200.0,sqrt,3.0,1.0,
+359,MR,1,CHEMBL286,,,,,,,,,median
+360,1-NN,2,CHEMBL286,1.0,jaccard,,,,,,,
+361,kNN,2,CHEMBL286,3.0,jaccard,,,,,,,
+362,SVR,2,CHEMBL286,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+363,RFR,2,CHEMBL286,,,,,100.0,sqrt,2.0,1.0,
+364,MR,2,CHEMBL286,,,,,,,,,median
+365,1-NN,3,CHEMBL286,1.0,jaccard,,,,,,,
+366,kNN,3,CHEMBL286,3.0,jaccard,,,,,,,
+367,SVR,3,CHEMBL286,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+368,RFR,3,CHEMBL286,,,,,200.0,sqrt,2.0,1.0,
+369,MR,3,CHEMBL286,,,,,,,,,median
+370,1-NN,4,CHEMBL286,1.0,jaccard,,,,,,,
+371,kNN,4,CHEMBL286,3.0,jaccard,,,,,,,
+372,SVR,4,CHEMBL286,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+373,RFR,4,CHEMBL286,,,,,200.0,sqrt,2.0,1.0,
+374,MR,4,CHEMBL286,,,,,,,,,median
+375,1-NN,5,CHEMBL286,1.0,jaccard,,,,,,,
+376,kNN,5,CHEMBL286,3.0,jaccard,,,,,,,
+377,SVR,5,CHEMBL286,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+378,RFR,5,CHEMBL286,,,,,100.0,sqrt,2.0,1.0,
+379,MR,5,CHEMBL286,,,,,,,,,median
+380,1-NN,6,CHEMBL286,1.0,jaccard,,,,,,,
+381,kNN,6,CHEMBL286,3.0,jaccard,,,,,,,
+382,SVR,6,CHEMBL286,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+383,RFR,6,CHEMBL286,,,,,200.0,sqrt,2.0,1.0,
+384,MR,6,CHEMBL286,,,,,,,,,median
+385,1-NN,7,CHEMBL286,1.0,jaccard,,,,,,,
+386,kNN,7,CHEMBL286,3.0,jaccard,,,,,,,
+387,SVR,7,CHEMBL286,,,10.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+388,RFR,7,CHEMBL286,,,,,200.0,sqrt,2.0,1.0,
+389,MR,7,CHEMBL286,,,,,,,,,median
+390,1-NN,8,CHEMBL286,1.0,jaccard,,,,,,,
+391,kNN,8,CHEMBL286,3.0,jaccard,,,,,,,
+392,SVR,8,CHEMBL286,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+393,RFR,8,CHEMBL286,,,,,100.0,sqrt,3.0,1.0,
+394,MR,8,CHEMBL286,,,,,,,,,median
+395,1-NN,9,CHEMBL286,1.0,jaccard,,,,,,,
+396,kNN,9,CHEMBL286,3.0,jaccard,,,,,,,
+397,SVR,9,CHEMBL286,,,100.0,<function tanimoto_from_dense at 0x00000233F6DF2700>,,,,,
+398,RFR,9,CHEMBL286,,,,,50.0,sqrt,2.0,1.0,
+399,MR,9,CHEMBL286,,,,,,,,,median

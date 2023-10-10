@@ -4,17 +4,15 @@ import numpy as np
 import pandas as pd
 import itertools as it
 from scipy import stats
-from scipy.sparse import csr_matrix
 # Sklearn
 from sklearn import neighbors, metrics
 from sklearn.metrics import mean_absolute_error
 from sklearn.dummy import DummyRegressor
-from sklearn.svm import SVR, SVC
+from sklearn.svm import SVR
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import StratifiedShuffleSplit, ShuffleSplit
-from regression_training_size.sveta.sveta.svm import ExplainingSVR
 
-from ML.ml_utils import tanimoto_from_dense
+from ML.ml_utils_reg import tanimoto_from_dense
 
 import warnings
 
@@ -50,9 +48,6 @@ class MLModel:
                     return {'C': [1, 10, 100, 10000],
                             'kernel': [tanimoto_from_dense],
                             }
-                elif self.ml_algorithm == "ExplainingSVR":
-                    return {'C': [1, 10, 100, 10000],
-                        }
                 elif self.ml_algorithm == "RFR":
                     return {'n_estimators': [50, 100, 200],
                             'max_features': ['sqrt', 'log2'],
@@ -69,26 +64,6 @@ class MLModel:
                             'metric': ['jaccard'],
                             }
 
-            if self.reg_class == "classification":
-                if self.ml_algorithm == "SVM":
-                    return {'C': [1, 10, 100, 10000],
-                            'kernel': [tanimoto_from_dense],
-                            }
-                elif self.ml_algorithm == "RFC":
-                    return {'n_estimators': [25, 50, 100, 200, 400],
-                            'max_features': ['sqrt', 'log2'],
-                            'min_samples_split': [2, 3, 5, 10],
-                            'min_samples_leaf': [1, 2, 5, 10],
-                            }
-                elif self.ml_algorithm == "kNN":
-                    return {"n_neighbors": [3, 5],
-                            'metric': ['jaccard'],
-                            }
-                elif self.ml_algorithm == "1-NN":
-                    return {"n_neighbors": [1],
-                            'metric': ['jaccard'],
-                            }
-
     def base_model(self):
 
         global model
@@ -97,8 +72,6 @@ class MLModel:
                 model = DummyRegressor()
             elif self.ml_algorithm == "SVR":
                 model = SVR()
-            elif self.ml_algorithm == "ExplainingSVR":
-                model = ExplainingSVR()
             elif self.ml_algorithm == "RFR":
                 model = RandomForestRegressor(random_state=self.seed)
             elif self.ml_algorithm == "kNN":
@@ -117,8 +90,7 @@ class MLModel:
         parameter_grid = {n: {name: value for name, value in zip(hyperparameters.keys(), comb)}
                           for n, comb in enumerate(it.product(*list(hyperparameters.values())), 1)}
 
-        df_evaluation = pd.DataFrame()
-
+        evaluation = []
         opt_metric_name = self.opt_metric
 
         for i, idx_params in enumerate(parameter_grid):
@@ -140,45 +112,46 @@ class MLModel:
 
                 model_hp = self.base_model.set_params(**cur_params)
 
-                if self.ml_algorithm == "ExplainingSVR":
-                    model_hp.fit(csr_matrix(train_data.features), train_data.labels)
-                    if opt_metric_name == 'MAE':
-                        results_cv_val = {'mae': mean_absolute_error(valid_data.labels,
-                                                                 model_hp.predict(csr_matrix(valid_data.features)))}
-                else:
-                    model_hp.fit(train_data.features, train_data.labels)
-                    if opt_metric_name == 'MAE':
-                        results_cv_val = {'mae': mean_absolute_error(valid_data.labels,
-                                                                 model_hp.predict(valid_data.features))}
+                model_hp.fit(train_data.features, train_data.labels)
+                if opt_metric_name == 'MAE':
+                    results_cv_val = {'mae': mean_absolute_error(valid_data.labels,
+                                                             model_hp.predict(valid_data.features))}
+                elif opt_metric_name == 'R2':
+                    results_cv_val = {'R2': metrics.r2_score(valid_data.labels,
+                                                             model_hp.predict(valid_data.features))}
                 results_cv.append(results_cv_val)
 
                 del model_hp
-
-            valid_avg_score = sum(item.get('mae', 0) for item in results_cv) / len(results_cv)
+            if opt_metric_name == 'MAE':
+                valid_avg_score = sum(item.get('mae', 0) for item in results_cv) / len(results_cv)
+            elif opt_metric_name == 'R2':
+                valid_avg_score = sum(item.get('R2', 0) for item in results_cv) / len(results_cv)
 
             # print(val_score)
-            df_evaluation = df_evaluation.append({
+
+            evaluation.append({
                 'params': cur_params,
                 opt_metric_name: valid_avg_score,
-                'model': self.ml_algorithm},
-                ignore_index=True)
+                'model': self.ml_algorithm})
+        df_evaluation = pd.DataFrame(evaluation)
 
         return df_evaluation
 
     def optimal_parameters(self):
 
         df_eval = self.opt_results
-        min_valid_score = df_eval[self.opt_metric].min()
-        df_min_score = df_eval[df_eval[self.opt_metric] == min_valid_score]
-        best_params = df_min_score.iloc[0]['params']
+        if self.opt_metric == 'MAE':
+            valid_score = df_eval[self.opt_metric].min()
+        elif self.opt_metric == 'R2':
+            valid_score = df_eval[self.opt_metric].max()
+        df_score = df_eval[df_eval[self.opt_metric] == valid_score]
+        best_params = df_score.iloc[0]['params']
+
         return best_params
 
     def final_model(self):
         model_ = self.base_model.set_params(**self.best_params)
-        if self.ml_algorithm == "ExplainingSVR":
-            return model_.fit(csr_matrix(self.training_data.features), self.training_data.labels)
-        else:
-            return model_.fit(self.training_data.features, self.training_data.labels)
+        return model_.fit(self.training_data.features, self.training_data.labels)
 
 class Model_Evaluation:
     def __init__(self, model, data, tr_data, model_id=None, reg_class="regression", ):
@@ -193,11 +166,8 @@ class Model_Evaluation:
     def model_predict(self, data):
 
         if self.reg_class == "regression":
-            if self.model_id == "ExplainingSVR":
-                y_prediction = self.model.model.predict(csr_matrix(data.features))
-            else:
-                y_prediction = self.model.model.predict(data.features)
 
+            y_prediction = self.model.model.predict(data.features)
             labels = self.data.labels
 
             predictions = pd.DataFrame(list(zip(data.cid, labels, y_prediction, data.smiles)),
@@ -206,27 +176,6 @@ class Model_Evaluation:
             predictions['Algorithm'] = self.model.ml_algorithm
             predictions["Target ID"] = predictions["Target ID"].map(lambda x: x.lstrip("CHEMBL").rstrip(""))
             predictions['Residuals'] = [label_i - prediction_i for label_i, prediction_i in zip(labels, y_prediction)]
-
-            if self.model.ml_algorithm == '1-NN':
-                nn = self.model.model.kneighbors(X=data.features, n_neighbors=1, return_distance=False)
-                predictions['1-NN'] = self.tr_data[nn].cid
-                predictions['1-NN_smiles'] = self.tr_data[nn].smiles
-            else:
-                predictions['1-NN'] = np.nan
-                predictions['1-NN_smiles'] = np.nan
-
-            return labels, y_prediction, predictions
-
-        elif self.reg_class == 'classification':
-
-            y_prediction = self.model.model.predict(data.features)
-            labels = self.data.labels
-
-            predictions = pd.DataFrame(list(zip(data.cid, labels, y_prediction)),
-                                       columns=["cid", "Experimental", "Predicted"])
-            predictions['Target ID'] = data.target[0]
-            predictions['Algorithm'] = self.model.ml_algorithm
-            predictions["Target ID"] = predictions["Target ID"].map(lambda x: x.lstrip("CHEMBL").rstrip(""))
 
             return labels, y_prediction, predictions
 
@@ -274,44 +223,5 @@ class Model_Evaluation:
 
             return results
 
-        elif self.reg_class == 'classification':
-
-            labels = self.labels
-            pred = self.y_pred
-
-            target = data.target[0]
-            model_name = self.model.ml_algorithm
-
-            result_list = [{"MCC": metrics.matthews_corrcoef(labels, pred),
-                            "F1": metrics.f1_score(labels, pred),
-                            "AUC": metrics.roc_auc_score(labels, pred),
-                            "BA": metrics.balanced_accuracy_score(labels, pred),
-                            "Accuracy": metrics.accuracy_score(labels, pred),
-                            "Precision": metrics.precision_score(labels, pred),
-                            "Recall": metrics.recall_score(labels, pred),
-                            "Average Precision": metrics.average_precision_score(labels, pred),
-                            "Dataset size": len(labels),
-                            "Target ID": target,
-                            "Algorithm": model_name,
-                            "pos_true": len([x for x in labels if x == 1]),
-                            "neg_true": len([x for x in labels if x == 0]),
-                            "pos_predicted": len([x for x in pred if x == 1]),
-                            "neg_predicted": len([x for x in pred if x == 0])
-                            }]
-
-            # Prepare result dataset
-            results = pd.DataFrame(result_list)
-            results = results[
-                "Target ID", "Algorithm", "Dataset size", "MCC", "F1", "AUC", "BA", "Accuracy", "Precision", "Recall", "Average Precision", "pos_true", "neg_true", "pos_predicted", "neg_predicted"]
-            results["Target ID"] = results["Target ID"].map(lambda x: x.lstrip("CHEMBL").rstrip(""))
-            results.set_index(["Target ID", "Algorithm", "Dataset size"], inplace=True)
-            results.columns = pd.MultiIndex.from_product([["Value"], ["MCC", "F1", "AUC", "BA", "Accuracy",
-                                                                      "Precision", "Recall", "Average Precision",
-                                                                      "pos_true", "neg_true", "pos_predicted",
-                                                                      "neg_predicted"]],
-                                                         names=["Value", "Metric"])
-            results = results.stack().reset_index().set_index("Target ID")
-
-            return results
 
 

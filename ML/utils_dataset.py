@@ -5,7 +5,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sns
 
-from regression_training_size.ML.ml_utils_reg import potency_classes
+from ML.ml_utils_reg import potency_classes
 
 
 def get_uniformly_distributed_sample_idx(data: Union[np.ndarray, List[float]], cid: Union[np.ndarray, List[str]],
@@ -242,7 +242,7 @@ def dataset_train_test(df_regression: pd.DataFrame, pot_bins: Optional[List[int]
         df_test['dataset'] = 'test'
         df_test['trial'] = trial
         df_test['set_size'] = len(df_test)
-        df_selections = df_selections.append(df_test)
+        df_selections = pd.concat([df_selections,df_test])
 
         if plot:
             print('test')
@@ -260,7 +260,7 @@ def dataset_train_test(df_regression: pd.DataFrame, pot_bins: Optional[List[int]
                 df_train['dataset'] = 'train'
                 df_train['trial'] = trial
                 df_train['set_size'] = len(df_train)
-                df_selections = df_selections.append(df_train)
+                df_selections = pd.concat([df_selections, df_train])
 
                 if plot:
                     print('train', size)
@@ -280,7 +280,7 @@ def dataset_train_test(df_regression: pd.DataFrame, pot_bins: Optional[List[int]
                     df_train['trial'] = trial
                     df_train['set_size'] = len(df_train)
                     df_train_cur = df_train
-                    df_selections = df_selections.append(df_train)
+                    df_selections = pd.concat([df_selections, df_train])
                 else:
                     train_ids = set(df_train_dict.get(size)) ^ set(df_train_cur.chembl_cid.tolist())
                     df_train_new = df_train_pool[df_train_pool['chembl_cid'].isin(train_ids)]
@@ -293,6 +293,6 @@ def dataset_train_test(df_regression: pd.DataFrame, pot_bins: Optional[List[int]
                     df_train['trial'] = trial
                     df_train['set_size'] = len(df_train)
                     df_train_cur = df_train
-                    df_selections = df_selections.append(df_train)
+                    df_selections = pd.concat([df_selections, df_train])
 
     return df_selections

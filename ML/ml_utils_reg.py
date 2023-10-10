@@ -393,36 +393,37 @@ def plot_regression_models_cat_mod(df, metric, plot_type='boxplot',
                     row=row,
                     legend=False, sharey=sharey, **kwargs)
 
-    for axis in g.axes.flat:
-        axis.tick_params(labelright=False)
-        if axis.is_first_col():
-            axis.set_ylabel(f'{metric[0]}', labelpad=10)
-        else:
-            axis.set_ylabel(f'{metric[1]}', labelpad=10)
+    #for axis in g.axes.flat:
+    #    axis.tick_params(labelright=False)
+    #    if axis.is_first_col():
+    #        axis.set_ylabel(f'{metric[0]}', labelpad=10)
+    #    else:
+    #        axis.set_ylabel(f'{metric[1]}', labelpad=10)
 
     if sub_fig_title:
         plt.suptitle(f'{sub_fig_title}', fontsize=20, x=0, y=0, fontweight='bold')
 
     tids = sorted(performance_df_['Target ID'].unique())
     g.set_xlabels(f'{x_labels}', labelpad=10)
+    g.set_ylabels(y_labels, labelpad=10)
     g.set(ylim=(ymin, ymax))
     if title:
         if row:
-            g.set_titles(r"{row_var}: {row_name} - {col_var}: {col_name}", )  # fontweight="bold"
+            g.set_titles(r"{row_name} - {col_name}", )  # fontweight="bold"
 
         if isinstance(title, str):
             g.set_titles(title)
         else:
             if row is None:
                 g.set_titles("{col_var}: {col_name}")
-            else:
-                for ax in g.axes.flat:
-                    if ax.is_first_row():
-                        ax.set_title(f"Target ID: {tids[0]}")
-                    elif ax.is_last_row():
-                        ax.set_title(f"{tids[2]}")
-                    else:
-                        ax.set_title(f"{tids[1]}")
+            #else:
+            #    for ax in g.axes.flat:
+            #        if ax.is_first_row():
+             #           ax.set_title(f"Target ID: {tids[0]}")
+             #       elif ax.is_last_row():
+             #           ax.set_title(f"{tids[2]}")
+             #       else:
+              #          ax.set_title(f"{tids[1]}")
     if yticks:
         g.set(ylim=(ymin, ymax), yticks=yticks)
     if xticks:
@@ -514,17 +515,18 @@ def metrics_potency_classes(df, targets=[280, 203, 2409],
                                                   squared=False),
                        "R2": metrics.r2_score(pot_trial['Experimental'], pot_trial['Predicted']),
                        "Pearsonr": stats.pearsonr(pot_trial['Experimental'], pot_trial['Predicted'])[0],
+                       "r²": stats.pearsonr(pot_trial['Experimental'], pot_trial['Predicted'])[0]**2,
                        "Spearmanr": stats.spearmanr(pot_trial['Experimental'], pot_trial['Predicted'])[0]
                        }
 
         pot_classes_performance.append(result_dict)
     potency_class_df = pd.DataFrame(pot_classes_performance)
     results_pc = potency_class_df[
-        ["Target ID", "Algorithm", "Test size", "potency_class", "trial", "Training size", "MAE", "MSE", "RMSE", "R2",
+        ["Target ID", "Algorithm", "Test size", "potency_class", "trial", "Training size", "MAE", "MSE", "RMSE", "R2", "r²",
          "Pearsonr", "Spearmanr"]]
     results_pc.set_index(["Target ID", "Algorithm", "Test size", "potency_class", "trial", "Training size"],
                          inplace=True)
-    results_pc.columns = pd.MultiIndex.from_product([["Value"], ["MAE", "MSE", "RMSE", "R2", "Pearsonr", "Spearmanr"]],
+    results_pc.columns = pd.MultiIndex.from_product([["Value"], ["MAE", "MSE", "RMSE", "R2", "r²", "Pearsonr", "Spearmanr"]],
                                                     names=["Value", "Metric"])
     results_pc = results_pc.stack().reset_index().set_index("Target ID")
     results_pc.reset_index(inplace=True)
@@ -565,15 +567,15 @@ def metric_potency_classes_ub(pred_df,
                        "RMSE": mean_squared_error(pot_trial['Experimental'], pot_trial['Predicted'],
                                                   squared=False),
                        "R2": metrics.r2_score(pot_trial['Experimental'], pot_trial['Predicted']),
-                       "r": stats.pearsonr(pot_trial['Experimental'], pot_trial['Predicted'])[0],
+                       "r²": stats.pearsonr(pot_trial['Experimental'], pot_trial['Predicted'])[0]**2,
                        }
 
         pot_classes_performance.append(result_dict)
     potency_class_df = pd.DataFrame(pot_classes_performance)
     results_pc = potency_class_df[
-        ["Target ID", "Algorithm", "Test size", "potency_class", "trial", "MAE", "MSE", "RMSE", "R2", "r"]]
+        ["Target ID", "Algorithm", "Test size", "potency_class", "trial", "MAE", "MSE", "RMSE", "R2", "r²"]]
     results_pc.set_index(["Target ID", "Algorithm", "Test size", "potency_class", "trial"], inplace=True)
-    results_pc.columns = pd.MultiIndex.from_product([["Value"], ["MAE", "MSE", "RMSE", "R2", "r"]],
+    results_pc.columns = pd.MultiIndex.from_product([["Value"], ["MAE", "MSE", "RMSE", "R2", "r²"]],
                                                     names=["Value", "Metric"])
     results_pc = results_pc.stack().reset_index().set_index("Target ID")
     results_pc.reset_index(inplace=True)
@@ -604,7 +606,7 @@ def plot_heatmap_stat_analysis(df, x, y, value, pvalue_boundaries = [0, 0.005, 1
                                                                                  annot=True, square=square)
 
     ax.set_titles("{col_var}: {col_name}")
-    ax.set_xticklabels(rotation=0)
+    #ax.set_xticklabels(rotation=0)
 
     fig = ax.figure
     cbar_ax = fig.add_axes([1.01, 0.36, 0.02, 0.3])

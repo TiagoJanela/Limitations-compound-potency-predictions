@@ -9,6 +9,7 @@ Anaconda can be used to install the .yml file provided.
 * **regression_models_3_bins_330.ipynb** - generates regression models with balanced training sets of increasing size, as well as, test sets.
 * **regression_models_3_bins_330_unbalanced.ipynb** - generates regression models with unbalanced training sets of increasing size and test sets.
 * **result_analysis.ipynb** - derives analysis for the computed results.
+* Notebooks with R2 in the name correspond to models trained with R2 as a cost function instead of MAE.
 
 ## Folders
 * **ML** - contains Python scripts to support model building and data analysis.
